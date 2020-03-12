@@ -14,7 +14,7 @@ doing any heavy editing with it.
 * sed
 
 ### How to run
-* Basic command is ./ted.sh
+* Basic command is `./ted.sh`
 * Useful to set as shell alias: `alias ted="./ted.sh"`
 
 ### Notes
