@@ -24,11 +24,9 @@ doing any heavy editing with it.
 * This README.md file was written with ted!
 * To view large files use: `./ted.sh -o file-name | less -r`
   * Can set as an shell funciton:
-  ```
-  out() {
+  ``` out() {
     ./ted.sh -o $1 | less -r
-  }
-  ```
+  } ```
 
 ### Screenshot
 ![scrot](scrot.png)
