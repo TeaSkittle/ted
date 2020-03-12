@@ -15,3 +15,6 @@ doing any heavy editing with it.
 
 ### Notes
 * Worth mentioning that this has been written and tested on OpenBSD
+* Uses ANSI escape codes for color, may cause problems with certains terminal emulators.
+* Tested with XTerm
+* Some characters like * cause errors, a good reason to not use this for serious editing
