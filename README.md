@@ -13,11 +13,18 @@ doing any heavy editing with it.
 * POSIX shell
 * sed
 
+### How to run
+* Basic command is ./ted.sh
+* Useful to set as shell alias:
+```
+alias ted="./ted.sh"
+```
+
 ### Notes
 * Worth mentioning that this has been written and tested on OpenBSD
 * Uses ANSI escape codes for color, may cause problems with certains terminal emulators.
 * Tested with XTerm
-* Some characters like * cause errors, a good reason to not use this for serious editing
+* This README.md file was written with ted!
 
 ### Screenshot
 ![scrot](scrot.png)

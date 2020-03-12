@@ -85,7 +85,7 @@ case $1 in
     -a)  # append to file, add new line
 	printf "Text: "
 	read APPEND
-	echo $APPEND >> $2
+	echo "$APPEND" >> $2
 	;;
     -d)  # delete line
 	printf "Line Number: "
@@ -112,14 +112,14 @@ case $1 in
 	printf "Text: "
 	read INS_TEXT
 	if [ "$INS_LINE" -eq "0" ]; then	  
-	    echo $INS_TEXT > backup
+	    echo "$INS_TEXT" > backup
 	    type $2 >> backup
 	elif [ "$INS_LINE" -gt "0" ]; then
 	    cp $2 backup
 	    LINE1=$(line_count $2)
 	    let LINE2=$LINE1-$INS_LINE
 	    type_top $INS_LINE $2 > backup
-	    echo $INS_TEXT >> backup
+	    echo "$INS_TEXT" >> backup
 	    tail -n $LINE2 $2 >> backup
 	fi
 	mv backup $2
