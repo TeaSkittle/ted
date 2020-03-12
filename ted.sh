@@ -62,11 +62,9 @@ line_count(){
     done < "$1"
     echo $count
 }
-# clear, not used
-cls(){
-    printf "\033c"
-}
-# main logic
+#
+# main
+#
 case $1 in
     -h)  # display basic help
 	printf "${CYAN}"
