@@ -22,7 +22,7 @@ alias ted="./ted.sh"
 
 ### Notes
 * Worth mentioning that this has been written and tested on OpenBSD
-* Uses ANSI escape codes for color, may cause problems with certains terminal emulators.
+* Uses ANSI escape codes for color, may cause problems with certain terminal emulators.
 * Tested with XTerm
 * This README.md file was written with ted!
 
