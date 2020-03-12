@@ -23,7 +23,7 @@ doing any heavy editing with it.
 * Tested with XTerm
 * This README.md file was written with ted!
 * To view large files use: `./ted.sh -o file-name | less -r`
-  * Can set as an shell function:
+  * Can set as a shell function:
   ``` 
   out() {
     ./ted.sh -o $1 | less -r
