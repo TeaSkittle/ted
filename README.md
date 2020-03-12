@@ -1,7 +1,7 @@
 # ted
 A line based text editor written for POSIX shells, using as few core utilities as possible.
 
-### Why?
+## Why?
 I have always wanted to write my own text editor, but after trying to learn curses and GNU Readline,  
 I decided to write something more similar to ed (the standard editor). It just so happened that  
 around the time I began poking around various text editors, I also started learning to pure SH  
