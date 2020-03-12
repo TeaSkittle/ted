@@ -25,6 +25,7 @@ alias ted="./ted.sh"
 * Uses ANSI escape codes for color, may cause problems with certain terminal emulators.
 * Tested with XTerm
 * This README.md file was written with ted!
+* To view large files use: ./ted.sh -o file-name | less -r
 
 ### Screenshot
 ![scrot](scrot.png)
