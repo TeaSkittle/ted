@@ -8,7 +8,7 @@
 # Ideas:
 #  - Add .tedrc (have colors read from there)
 #  - Try and write own verions of: tail, mv, cp, and echo
-#  - Have all vairables as cmdline args like:  $ ./ted -d 15 test 
+#
 
 # Colors
 DEFAULT='\033[0m'
