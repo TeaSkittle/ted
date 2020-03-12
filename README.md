@@ -15,17 +15,14 @@ doing any heavy editing with it.
 
 ### How to run
 * Basic command is ./ted.sh
-* Useful to set as shell alias:
-```
-alias ted="./ted.sh"
-```
+* Useful to set as shell alias: `alias ted="./ted.sh"`
 
 ### Notes
 * Worth mentioning that this has been written and tested on OpenBSD
 * Uses ANSI escape codes for color, may cause problems with certain terminal emulators.
 * Tested with XTerm
 * This README.md file was written with ted!
-* To view large files use: ./ted.sh -o file-name | less -r
+* To view large files use: `./ted.sh -o file-name | less -r`
 
 ### Screenshot
 ![scrot](scrot.png)
