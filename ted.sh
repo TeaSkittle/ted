@@ -1,5 +1,5 @@
 #!/bin/sh
-# A written for POSIX shells, using as few core utils as possible
+# A line based text editor written for POSIX shells, using as few core utils as possible
 # Autor: Travis Dowd
 # Date Started: 10-31-2019
 #
