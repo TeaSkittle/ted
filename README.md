@@ -14,21 +14,17 @@ doing any heavy editing with it.
 * sed
 
 ### How to run
+* To make run: `chmod +x ted.sh`
 * Basic command is `./ted.sh`
 * Useful to set as shell alias: `alias ted="./ted.sh"`
 
 ### Notes
+* Arrow keys are supported
 * Worth mentioning that this has been written and tested on OpenBSD
-* Uses ANSI escape codes for color, may cause problems with certain terminal emulators.
 * Tested with XTerm
+* Tested with shellcheck ( https://github.com/koalaman/shellcheck )
 * This README.md file was written with ted!
 * To view large files use: `./ted.sh -o file-name | less -r`
-  * Can set as a shell function:
-  ``` 
-  out() {
-    ./ted.sh -o $1 | less -r
-  } 
-  ```
 
 ### Screenshot
 ![scrot](scrot.png)

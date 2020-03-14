@@ -10,15 +10,8 @@
 #  - Try and write own verions of: tail, mv, cp, and echo
 #
 
-# Colors
-DEFAULT='\033[0m'
-GREEN='\033[0;32m'
-CYAN='\033[0;36m'
-RED='\033[0;31m'
-
-# functions:
 # cat
-type(){
+type_out(){
     count=0
     while IFS= read -r line; do
 	printf '%s\n' "$line"
@@ -31,15 +24,11 @@ type_line_num(){
     while IFS= read -r line; do
 	if [ "$count" -lt "10" ]
 	then
-	    printf "${GREEN}"
 	    printf ' %d ' "$count"
-	    printf "${DEFAULT}"
 	    printf '  %s\n' "$line"
 	    count=$((count+1))
 	else
-	    printf "${GREEN}"
 	    printf '%d ' "$count"
-	    printf "${DEFAULT}"
 	    printf '  %s\n' "$line"
 	    count=$((count+1))
     fi
@@ -67,70 +56,66 @@ line_count(){
 #
 case $1 in
     -h)  # display basic help
-	printf "${CYAN}"
-	printf "List of available modes:\n"
-	printf "\t o - output file\n"
-	printf "\t a - append to file\n"
-	printf "\t r - replace line\n"
-	printf "\t i - insert at line number\n"
-	printf "\t d - delete specific line number\n"
-	printf "\t h - help\n"
-	printf "${DEFAULT}"
+	printf "List of available modes:\\n"
+	printf "\\t o - output file\\n"
+	printf "\\t a - append to file\\n"
+	printf "\\t r - replace line\\n"
+	printf "\\t i - insert at line number\\n"
+	printf "\\t d - delete specific line number\\n"
+	printf "\\t h - help\\n"
 	;;
     -o)  # output file
-	type_line_num $2 
+	type_line_num "$2"
 	;;
     -a)  # append to file, add new line
 	printf "Text: "
-	read APPEND
-	echo "$APPEND" >> $2
+	read -r APPEND
+	echo "$APPEND" >> "$2"
 	;;
     -d)  # delete line
 	printf "Line Number: "
-	read DEL_LINE
+	read -r DEL_LINE
 	if [ "$DEL_LINE" -eq "0" ]; then
-	    sed -i "$DEL_LINE d" $2
+	    sed -i "$DEL_LINE d" "$2"
 	elif [ "$DEL_LINE" -gt "0" ]; then
 	    DEL_LINE=$((DEL_LINE+1))
-	    sed -i "$DEL_LINE d" $2
+	    sed -i "$DEL_LINE d" "$2"
 	fi
 	;;
     -r)  # replace at line number
 	printf "Line Number: "
-	read REP_LINE
+	read -r REP_LINE
 	printf "Text: "
-	read REP_TEXT
+	read -r REP_TEXT
 	LINUM=$((REP_LINE+1))
-	sed -i "$LINUM s/.*/$REP_TEXT/g" $2
+	sed -i "$LINUM s/.*/$REP_TEXT/g" "$2"
 	;;
     -i)  # insert at line number
 	touch backup
 	printf "Line Number: "
-	read INS_LINE
+	read -r INS_LINE
 	printf "Text: "
-	read INS_TEXT
+	read -r INS_TEXT
 	if [ "$INS_LINE" -eq "0" ]; then	  
 	    echo "$INS_TEXT" > backup
-	    type $2 >> backup
+	    type_out "$2" >> backup
 	elif [ "$INS_LINE" -gt "0" ]; then
-	    cp $2 backup
-	    LINE1=$(line_count $2)
-	    let LINE2=$LINE1-$INS_LINE
-	    type_top $INS_LINE $2 > backup
+	    cp "$2" backup
+	    LINE1=$(line_count "$2")
+	    LINE2=$((LINE1-INS_LINE))
+	    type_top "$INS_LINE" "$2" > backup
 	    echo "$INS_TEXT" >> backup
-	    tail -n $LINE2 $2 >> backup
+	    tail -n "$LINE2" "$2" >> backup
 	fi
-	mv backup $2
+	mv backup "$2"
 	;;
     f)  # testing
 	printf "Top line to print: "
-	read TOP_NUM
-	type_top $TOP_NUM $2
+	read -r TOP_NUM
+	type_top "$TOP_NUM" "$2"
 	;;
     -*)  # any other cmd, error checking
-	printf "${RED}"
-	printf "ERROR: Unkown mode...\n"
-	printf "${DEFAULT}"
+	printf "ERROR: Unkown mode...\\n"
 	;;
 esac
 
