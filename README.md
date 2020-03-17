@@ -19,7 +19,7 @@ doing any heavy editing with it.
 * Useful to set as shell alias: `alias ted="./ted.sh"`
 
 ### Notes
-* Arrow keys are supported
+* Arrow keys are not supported
 * Worth mentioning that this has been written and tested on OpenBSD
 * Tested with XTerm
 * Tested with shellcheck ( https://github.com/koalaman/shellcheck )
