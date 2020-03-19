@@ -7,7 +7,7 @@ I decided to write something more similar to ed (the standard editor). It just s
 around the time I began poking around various text editors, I also started learning to pure SH 
 scripts. This is by no means meant to be a text editor to replace any other out there, it was a simple 
 learning excersize for myself. It is useful for making quick edits though, but I would not recommend 
-doing any heavy editing with it. Also the name ted stands for **T**ravis' **Ed**itor. 
+doing any heavy editing with it. Also the name ted stands for **<u>T</u>**ravis' **Ed**itor. 
 
 ### Dependencies
 * POSIX shell
