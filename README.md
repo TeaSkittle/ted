@@ -7,7 +7,7 @@ I decided to write something more similar to ed (the standard editor). It just s
 around the time I began poking around various text editors, I also started learning to pure SH 
 scripts. This is by no means meant to be a text editor to replace any other out there, it was a simple 
 learning excersize for myself. It is useful for making quick edits though, but I would not recommend 
-doing any heavy editing with it.
+doing any heavy editing with it. Also the name ted stands for **T**ravis' **Ed**itor. 
 
 ### Dependencies
 * POSIX shell
@@ -20,10 +20,8 @@ doing any heavy editing with it.
 
 ### Notes
 * Arrow keys are not supported
-* Worth mentioning that this has been written and tested on OpenBSD
-* Tested with XTerm
-* Tested with shellcheck ( https://github.com/koalaman/shellcheck )
-* This README.md file was written with ted!
+* Has been tested on XTerm running OpenBSD
+* Linted using shellcheck ( https://github.com/koalaman/shellcheck )
 * To view large files use: `./ted.sh -o file-name | less -r`
 
 ### Screenshot
