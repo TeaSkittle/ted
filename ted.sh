@@ -3,11 +3,11 @@
 # Autor: Travis Dowd
 # Date Started: 10-31-2019
 #
-# Dependancies: POSIX Shell, sed, tail, echo, cp, mv
+# Dependencies: POSIX Shell, sed, tail, echo, cp, mv
 #
 # Ideas:
 #  - Add .tedrc (have colors read from there)
-#  - Try and write own verions of: tail, mv, cp, and echo
+#  - Switch to perl (will work on windows and wont require the above dependencies)
 #
 
 # cat
@@ -118,4 +118,3 @@ case $1 in
 	printf "ERROR: Unkown mode...\\n"
 	;;
 esac
-
